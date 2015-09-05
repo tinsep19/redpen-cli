@@ -4,5 +4,5 @@
 *~
 pkg/*
 src/*
-redpen-cli-*.pkg.tar.xz
-redpen-cli-*.tar.gz
+redpen-*.pkg.tar.xz
+redpen-*.tar.gz

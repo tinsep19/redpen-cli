@@ -1,8 +1,0 @@
-#!/bin/sh
-CP=/usr/share/java/redpen-cli/conf
-for i in /usr/share/java/redpen-cli/lib/*.jar
-do
-    CP="$CP:$i"
-done
-
-exec /usr/lib/jvm/java-8-openjdk/bin/java -cp "$CP" cc.redpen.Main "$@"

@@ -5,9 +5,9 @@
 # then please put 'unknown'.
 
 # Maintainer: Your Name <youremail@domain.com>
-pkgname=redpen-cli
-pkgver=1.1
-pkgrel=2
+pkgname=redpen
+pkgver=1.3
+pkgrel=0
 epoch=
 pkgdesc="A proofreading tool to help writers or programmers."
 arch=(any)
@@ -25,17 +25,15 @@ backup=()
 options=()
 install=
 changelog=
-source=(https://github.com/recruit-tech/redpen/releases/download/v$pkgver.$pkgrel/$pkgname-$pkgver.$pkgrel.tar.gz redpen.run)
+source=(https://github.com/recruit-tech/redpen/releases/download/v$pkgver.$pkgrel/$pkgname-$pkgver.$pkgrel.tar.gz)
 noextract=()
-md5sums=(f90912218bf6207a6dd82808cca6752b 034bb2ae2fe1e4c22796c2aa9507e166)
+md5sums=(e9dfc9d2bb6f2e7cc30bf00bb6debdce)
 validpgpkeys=()
 
 package() {
-    install -m 755 -D "$srcdir/redpen.run" "$pkgdir/usr/bin/redpen"
-    for i in $srcdir/$pkgname-$pkgver/{conf,lib}/*
-    do
-	f=${i##$srcdir/$pkgname-$pkgver}
-	install -D $i $pkgdir/usr/share/java/$pkgname/$f
-    done
+    mkdir -p $pkgdir/usr/share/java
+    mkdir -p $pkgdir/usr/bin
+    cp -r $srcdir/$pkgname-distribution-$pkgver $pkgdir/usr/share/java/$pkgname
+    ln -s $pkgdir/usr/share/java/$pkgname/bin/redpen $pkgdir/usr/bin/redpen
 }
 

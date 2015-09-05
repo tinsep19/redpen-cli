@@ -1,5 +1,4 @@
 PKGBUILD for [redpen](http://redpen.cc).
-It follows [Java package guidlines](https://wiki.archlinux.org/index.php/Java_package_guidelines).
 
 # Usage
 
@@ -11,7 +10,13 @@ $ cd $HOME/abs
 $ git clone https://github.com/tinsep19/redpen-cli.git
 $ cd redpen-cli
 $ makepkg
-$ sudo pacman -U redpen-cli-1.1-2-any.pkg.tar.xz
+$ sudo pacman -U redpen-1.3-0-any.pkg.tar.xz
 ```
 
+## Use redpen
+You MUST set JAVA_HOME.
 
+```
+$ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+$ redpen -v
+```
